@@ -1,13 +1,12 @@
-В чем разница между List, Set и Map? В каком случае ты используешь Set вместо List?
----------------------------------------------------------------------------------------
+# В чем разница между List, Set и Map? В каком случае ты используешь Set вместо List?
 
-> TL;DR: `List` — это индексированная, упорядоченная коллекция, допускающая дублирование элементов. `Set` — коллекция уникальных элементов, которая под капотом использует хеш-таблицу для обеспечения константного времени поиска. `Map` — коллекция, хранящая данные в виде пар "ключ-значение", где ключи уникальны. `Set` используется вместо `List` в тех случаях, когда алгоритмически необходим быстрый поиск элементов (операция `contains`) или когда бизнес-логика требует строгой уникальности данных.
+> `List` — это индексированная, упорядоченная коллекция, допускающая дублирование элементов. `Set` — коллекция уникальных элементов, которая под капотом использует хеш-таблицу для обеспечения константного времени поиска. `Map` — коллекция, хранящая данные в виде пар "ключ-значение", где ключи уникальны. `Set` используется вместо `List` в тех случаях, когда алгоритмически необходим быстрый поиск элементов (операция `contains`) или когда бизнес-логика требует строгой уникальности данных.
 
-### Разбор
+## Разбор
 
 Разница между этими структурами данных кроется в механизмах аллокации памяти и алгоритмической сложности базовых операций.
 
-**List**
+### List
 
 По умолчанию в Dart используется реализация списка на основе динамического массива с непрерывным выделением памяти (contiguous memory).
 
@@ -17,8 +16,7 @@
 | Поиск по значению | O(n) |
 | ставка в середину или начало | O(n) |
 
-
-**Set**
+### Set
 
 В Dart по умолчанию Set реализуется классом `LinkedHashSet`.
 Это означает, что он совмещает в себе хеш-таблицу (для обеспечения уникальности и быстрого поиска) и двусвязный список (для сохранения порядка добавления элементов).
@@ -29,11 +27,11 @@
 
 Важно: чтобы использовать кастомные объекты в Set, вы обязаны корректно переопределить геттер hashCode и operator == в вашем классе.
 
-**Map**
+### Map
 
 По умолчанию реализуется как `LinkedHashMap`. Работает аналогично `Set`, но ассоциирует уникальный хешируемый ключ с любым значением. Поиск значения по ключу `map[key]` выполняется за O(1).
 
-**Практическое применение**
+### Практическое применение
 
 Самая распространенная ошибка разработчиков — использование `List.contains` внутри методов `build` (например, при рендеринге `ListView.builder`).
 
@@ -42,10 +40,10 @@
 
 Также `Map` часто используется для кэширования (паттерн Dictionary), когда данные из API (например, `List<User>`) конвертируются в `Map<String, User>` для мгновенного доступа к профилю пользователя по его ID без необходимости обходить массив циклом.
 
-### Что почитать
+## Что почитать
 
-*   [https://dart.dev/language/collections](https://dart.dev/language/collections)
-*   [https://dart.dev/null-safety/understanding-null-safety](https://dart.dev/null-safety/understanding-null-safety)
-*   [https://api.dart.dev/dart-collection/LinkedHashMap-class.html](https://api.dart.dev/dart-collection/LinkedHashMap-class.html)
-*   [https://api.dart.dev/dart-collection/LinkedHashSet-class.html](https://api.dart.dev/dart-collection/LinkedHashSet-class.html)
-*   [https://dart.dev/effective-dart/usage#collections](https://dart.dev/effective-dart/usage#collections)
+* [Collections](https://dart.dev/language/collections)
+* [Understanding null safety](https://dart.dev/null-safety/understanding-null-safety)
+* [LinkedHashMap class](https://api.dart.dev/dart-collection/LinkedHashMap-class.html)
+* [LinkedHashSet class](https://api.dart.dev/dart-collection/LinkedHashSet-class.html)
+* [Effective dart (collections)](https://dart.dev/effective-dart/usage#collections)
