@@ -32,11 +32,6 @@
 * [В чем разница между mixin и обычным наследованием? Какие ограничения есть у миксинов в Dart?](03_oop/mixin_vs_inheritance.md)
 * [В чем разница между модификаторами base, interface, final и sealed при объявлении классов?](03_oop/class_modifiers.md)
 
-## 06 — Flutter UI
-
-* [Объясни концепцию «Во Flutter все есть виджет». Чем виджет отличается от обычного класса в Dart?](06_flutter_ui/everything_is_widget.md)
-* [В чем фундаментальная разница между StatelessWidget, StatefulWidget и InheritedWidget?](06_flutter_ui/stateless_stateful_inherited.md)
-
 ## 10 — Testing & Tools
 
 * [Что такое flavors? Как ты организуешь работу с ними?](10_testing_and_tools/flavors.md)
