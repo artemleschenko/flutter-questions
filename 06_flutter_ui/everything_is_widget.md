@@ -63,4 +63,3 @@ void main() {
 * [Building user interfaces with Flutter](https://docs.flutter.dev/ui)
 * [Виджеты: основы — Яндекс Образование](https://education.yandex.ru/handbook/flutter/article/vidzheti-osnovi)
 * [Introduction to widgets](https://docs.flutter.dev/ui/widgets-intro)
-* [Inside Flutter — как устроены деревья](https://docs.flutter.dev/resources/architectural-overview#inside-flutter)
