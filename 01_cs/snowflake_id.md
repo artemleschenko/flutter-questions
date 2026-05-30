@@ -71,17 +71,6 @@ class SnowflakeGenerator {
 }
 ```
 
-*Пример таблицы*
-
-|  Структура данных  | Доступ по индексу | Поиск по значению |   Вставка   |   Удаление  |
-|--------------------|-------------------|-------------------|-------------|-------------|
-| Array (List)       |        O(1)       |        O(n)       |    O(n)*    |    O(n)     |
-| Linked List.       |        O(n)       |        O(n)       |    O(1)     |    O(1)     |
-| Hash Table (Map)   |         —         |        O(1)       |    O(1)     |    O(1)     |
-| Binary Search Tree |         —         |        O(log n)   |    O(log n) |    O(log n) |
-| Stack / Queue      |         —         |        O(n)       |    O(1)     |    O(1)     |
-
-
 ## Что почитать
 
 * [Understanding Distributed ID Generation with Sonyflake: A Twitter Snowflake Implementation in Go](https://medium.com/@sanhdoan/understanding-distributed-id-generation-with-sonyflake-a-twitter-snowflake-implementation-in-go-e4aab981bfb2)
