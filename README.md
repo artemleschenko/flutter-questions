@@ -33,6 +33,10 @@
 * [В чем разница между mixin и обычным наследованием? Какие ограничения есть у миксинов в Dart?](03_oop/mixin_vs_inheritance.md)
 * [В чем разница между модификаторами base, interface, final и sealed при объявлении классов?](03_oop/class_modifiers.md)
 
+## 06 — Flutter UI
+
+* [Расскажи как реализовать Accessibility во Flutter приложениях](06_flutter_ui/accessibility.md)
+
 ## 07 — Under the Hood
 
 * [Объясни связь между Widget Tree, Element Tree и RenderObject Tree. Зачем Flutter использует именно три дерева?](07_under_the_hood/trees_relationship.md)
