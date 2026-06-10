@@ -49,29 +49,44 @@ Widget build(BuildContext context) {
 `BuildContext` специально ограничивает API: разработчик получает только нужные операции (поиск предков, зависимости, `mounted`), а не прямой доступ ко всей внутренней механике `Element`.  
 Это защищает жизненный цикл и инкапсулирует работу фреймворка.
 
-### Пример: разные `context` — разный результат
+### Пример: `context` = «где я стою в дереве»
+
+`Theme.of(context)` ищет `Theme` только **выше** переданного `context`.  
+Вниз по дереву `context` «не смотрит».
 
 ```dart
-class Parent extends StatelessWidget {
-  const Parent({super.key});
+class Demo extends StatelessWidget {
+  const Demo({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // context — это место Demo в дереве (выше возвращаемого Theme)
     return Theme(
-      data: ThemeData.light(),
-      child: Builder(
-        builder: (innerContext) {
-          // innerContext уже "ниже" Theme
-          final isDark = Theme.of(innerContext).brightness == Brightness.dark;
-          return Text(isDark ? 'dark' : 'light');
-        },
+      data: ThemeData.dark(),
+      child: Column(
+        children: [
+          // Ошибка мышления: Text физически внутри Theme,
+          // но context взят из build Demo (выше Theme)
+          Text('outer: ${Theme.of(context).brightness.name}'),
+
+          Builder(
+            builder: (innerContext) {
+              // innerContext создан уже ПОД Theme(data: dark)
+              return Text('inner: ${Theme.of(innerContext).brightness.name}');
+            },
+          ),
+        ],
       ),
     );
   }
 }
 ```
 
-Один и тот же `Theme.of(...)`, но результат зависит от того, **какой** `BuildContext` передан.
+Если `Demo` лежит внутри `MaterialApp` со светлой темой, на экране будет:
+- `outer: light` — `Theme.of(context)` смотрит вверх от Demo и находит тему `MaterialApp`;
+- `inner: dark` — `Theme.of(innerContext)` смотрит вверх от Builder и находит локальный `Theme`.
+
+**Вывод:** важен не только код вложенности виджетов, но и **какой именно `BuildContext` ты передаёшь** в `Theme.of` / `of(context)`.
 
 ### Частые ошибки
 
