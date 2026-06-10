@@ -49,45 +49,6 @@ Widget build(BuildContext context) {
 `BuildContext` специально ограничивает API: разработчик получает только нужные операции (поиск предков, зависимости, `mounted`), а не прямой доступ ко всей внутренней механике `Element`.  
 Это защищает жизненный цикл и инкапсулирует работу фреймворка.
 
-### Пример: `context` = «где я стою в дереве»
-
-`Theme.of(context)` ищет `Theme` только **выше** переданного `context`.  
-Вниз по дереву `context` «не смотрит».
-
-```dart
-class Demo extends StatelessWidget {
-  const Demo({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    // context — это место Demo в дереве (выше возвращаемого Theme)
-    return Theme(
-      data: ThemeData.dark(),
-      child: Column(
-        children: [
-          // Ошибка мышления: Text физически внутри Theme,
-          // но context взят из build Demo (выше Theme)
-          Text('outer: ${Theme.of(context).brightness.name}'),
-
-          Builder(
-            builder: (innerContext) {
-              // innerContext создан уже ПОД Theme(data: dark)
-              return Text('inner: ${Theme.of(innerContext).brightness.name}');
-            },
-          ),
-        ],
-      ),
-    );
-  }
-}
-```
-
-Если `Demo` лежит внутри `MaterialApp` со светлой темой, на экране будет:
-- `outer: light` — `Theme.of(context)` смотрит вверх от Demo и находит тему `MaterialApp`;
-- `inner: dark` — `Theme.of(innerContext)` смотрит вверх от Builder и находит локальный `Theme`.
-
-**Вывод:** важен не только код вложенности виджетов, но и **какой именно `BuildContext` ты передаёшь** в `Theme.of` / `of(context)`.
-
 ### Частые ошибки
 
 1. **Использовать `context` не из той точки дерева** (частая ошибка с `InheritedWidget`).
