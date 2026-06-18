@@ -10,6 +10,7 @@
 * [В чем принципиальная разница между стеком (Stack) и очередью (Queue)? Приведи примеры, где их логично использовать в реальном приложении.](01_cs/queue_vs_stack.md)
 * [Расскажи структуру OSI. За что отвечает каждый из слоев и какие протоколы представлены на них?](01_cs/osi_levels.md)
 * [Какие есть механизмы синхронизации потоков? В чем преимущества и недостатки каждого метода.](01_cs/sync_mechanisms.md)
+* [Что такое Snowflake ID? Сравни с UUID](01_cs/snowflake_id.md)
 
 ## 02 — Dart Core
 
@@ -44,6 +45,14 @@
 * [Для чего во Flutter нужны ключи (Key)? Приведи пример, когда без ValueKey сломается логика UI. В чем разница между GlobalKey и LocalKey?](06_flutter_ui/widget_keys.md)
 * [Как отследить момент, когда пользователь свернул приложение? Чем `inactive` отличается от `paused` на iOS?](06_flutter_ui/app_lifecycle.md)
 * [Как изменилась логика обработки системной кнопки «Назад» при переходе от `WillPopScope` к `PopScope`?](06_flutter_ui/will_pop_scope_to_pop_scope.md)
+* [Расскажи как реализовать Accessibility во Flutter приложениях](06_flutter_ui/accessibility.md)
+
+## 07 — Under the Hood
+
+* [Объясни связь между Widget Tree, Element Tree и RenderObject Tree. Зачем Flutter использует именно три дерева?](07_under_the_hood/trees_relationship.md)
+* [Как работают Extension Methods под капотом? Можно ли добавить новое поле состояния внутрь класса через Extension?](07_under_the_hood/extension_methods.md)
+* [Что это за виджет RepaintBoundary и когда его использование может спасти FPS?](07_under_the_hood/repaint_boundary.md)
+* [Почему виджеты IntrinsicHeight и IntrinsicWidth считаются «дорогими»?](07_under_the_hood/intrinsic_widgets.md)
 
 ## 10 — Testing & Tools
 
