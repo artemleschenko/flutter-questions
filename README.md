@@ -35,6 +35,15 @@
 ## 06 — Flutter UI
 
 * [Объясни концепцию «Во Flutter все есть виджет». Чем виджет отличается от обычного класса в Dart?](06_flutter_ui/everything_is_widget.md)
+* [В чем фундаментальная разница между StatelessWidget, StatefulWidget и InheritedWidget?](06_flutter_ui/stateless_stateful_inherited.md)
+* [Назови основные методы жизненного цикла StatefulWidget. Для чего нужен каждый из них?](06_flutter_ui/stateful_widget_lifecycle.md)
+* [Почему метод `build` должен быть «чистым»?](06_flutter_ui/why_build_should_be_pure.md)
+* [Что такое BuildContext и зачем он передается в метод `build`?](06_flutter_ui/build_context.md)
+* [Как InheritedWidget уведомляет своих потомков об изменениях? Почему `dependOnInheritedWidgetOfExactType<T>()` имеет сложность O(1), несмотря на потенциально глубокое дерево виджетов?](06_flutter_ui/inherited_widget_notify.md)
+* [Как сверстать список, в котором может быть 1000 элементов, чтобы приложение не зависло?](06_flutter_ui/long_list_layout.md)
+* [Для чего во Flutter нужны ключи (Key)? Приведи пример, когда без ValueKey сломается логика UI. В чем разница между GlobalKey и LocalKey?](06_flutter_ui/widget_keys.md)
+* [Как отследить момент, когда пользователь свернул приложение? Чем `inactive` отличается от `paused` на iOS?](06_flutter_ui/app_lifecycle.md)
+* [Как изменилась логика обработки системной кнопки «Назад» при переходе от `WillPopScope` к `PopScope`?](06_flutter_ui/will_pop_scope_to_pop_scope.md)
 
 ## 10 — Testing & Tools
 
