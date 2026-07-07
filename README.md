@@ -33,6 +33,20 @@
 * [В чем разница между mixin и обычным наследованием? Какие ограничения есть у миксинов в Dart?](03_oop/mixin_vs_inheritance.md)
 * [В чем разница между модификаторами base, interface, final и sealed при объявлении классов?](03_oop/class_modifiers.md)
 
+## 04 — Async & Runtime
+
+* [Что такое Future? В чем разница между async/await и использованием метода .then()?](04_async_runtime/future_async_await.md)
+* [Как в Dart перехватывать и обрабатывать ошибки при работе с Future?](04_async_runtime/future_error_handling.md)
+* [Как работает Event Loop? Как приоритетность очереди микрозадач влияет на отзывчивость интерфейса?](04_async_runtime/event_loop.md)
+* [В чем принципиальная разница между Single-subscription и Broadcast стримами?](04_async_runtime/streams_types.md)
+* [Как работает сборщик мусора (Garbage Collector)? Чем поколения в Dart GC отличаются от Java?](04_async_runtime/garbage_collector.md)
+* [Почему циклические ссылки не приводят к утечкам памяти в Dart?](04_async_runtime/cyclic_references.md)
+* [Когда объект должен удерживаться через WeakReference, а не через обычную ссылку?](04_async_runtime/weak_reference.md)
+* [Для каких задач предназначены Finalizer и почему их нельзя использовать как замену dispose()?](04_async_runtime/finalizer.md)
+* [Каков жизненный цикл объекта в Dart с момента выделения памяти в Young Space до его удаления?](04_async_runtime/object_lifecycle.md)
+* [Как работает Stream под капотом?](04_async_runtime/stream_internals.md)
+* [Что такое Zone в Dart и как этот механизм используется для перехвата необработанных ошибок?](04_async_runtime/zones.md)
+
 ## 06 — Flutter UI
 
 * [Расскажи как реализовать Accessibility во Flutter приложениях](06_flutter_ui/accessibility.md)
